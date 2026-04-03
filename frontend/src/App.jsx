@@ -7,7 +7,7 @@ function App() {
 	const [editingId, setEditingId] = useState(null);
 
 	useEffect(() => {
-		fetch("http://localhost:3000/products")
+		fetch("https://gw21.onrender.com/products")
 			.then((res) => res.json())
 			.then((data) => setProducts(data));
 	}, []);
@@ -15,7 +15,7 @@ function App() {
 	const onFinish = (e) => {
 		e.preventDefault();
 		if (editingId) {
-			fetch(`http://localhost:3000/products/${editingId}`, {
+			fetch(`https://gw21.onrender.com/products/${editingId}`, {
 				method: "PATCH",
 				headers: {
 					"content-type": "application/json",
@@ -36,7 +36,7 @@ function App() {
 					alert("Xatolik yuz berdi");
 				});
 		} else {
-			fetch("http://localhost:3000/products", {
+			fetch("https://gw21.onrender.com/products", {
 				method: "POST",
 				headers: {
 					"content-type": "application/json",
@@ -57,7 +57,7 @@ function App() {
 	};
 
 	const deleteProduct = (id) => {
-		fetch(`http://localhost:3000/products/${id}`, {
+		fetch(`https://gw21.onrender.com/products/${id}`, {
 			method: "DELETE",
 		})
 			.then(() => {
