@@ -5,7 +5,11 @@ import cors from "cors";
 import productModel from "./models/product.model.js";
 
 const app = express();
-app.use(cors());
+app.use(
+	cors({
+		origin: ["http://localhost:5173", "https://gw21.vercel.app/"],
+	}),
+);
 
 const DB_URI = process.env.DB_URI;
 if (!DB_URI) {
